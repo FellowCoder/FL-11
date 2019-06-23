@@ -1,5 +1,82 @@
-/*
 
-write your code here
 
-*/
+
+@media print {
+
+    .container {
+        padding: 0;
+    }
+
+    p, a {
+        font-size: 12px;
+    }
+
+    .padding-medium {
+        padding: 0;
+    }
+    .tm-section-description {
+        text-align: center;
+    }
+
+    h2.tm-section-title, .heading.tm-content-box .padding-medium h2 {
+        color: deepskyblue;
+        font-weight: 300;
+        opacity: 0.5;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .tm-sidebar, .tm-sidebar ul, .flex-item.tm-team-img, #about, .blocks .tm-content-box.flex-2-col, .blocks .tm-content-box, .carousel-indicators, .tm-content-box:nth-child(6) {
+        display: none;
+    }
+
+    .tm-content-box.tm-content-header.margin-b-10, .tm-main-content, .heading.tm-content-box ol {
+        padding: 0;
+    }
+
+    .tm-content-box.flex-2-col, #home .tm-banner {
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+    }
+
+    .padding-medium.flex-item.tm-team-description-container.flex-item, .padding-medium.flex-item.tm-team-description-container, #ideas #tmCarousel .carousel-inner:first-child, #tmCarousel {
+        margin: 0 auto;
+        padding: 0;
+        max-width: inherit;
+    }
+
+    .heading.tm-content-box {
+        padding-top: 0;
+    }
+
+    .heading.tm-content-box ol li:nth-of-type(odd) {
+        float: left;
+        clear: both;
+        padding-left: 30%;
+    }
+
+    .heading.tm-content-box ol li:nth-of-type(even) {
+        float: right;
+        clear: both;
+        padding-right: 30%;
+    }
+
+    .heading.tm-content-box ol li {
+        list-style: none;
+        display: block;
+    }
+
+    .heading.tm-content-box ol li a {
+        color: black;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading.tm-content-box ol li a:first-letter {
+        color: #1f7e9a;
+        font-size: 175%;
+    }
+
+}

@@ -1,1 +1,76 @@
-// Write your styles here
+/*
+.header_heading::after {
+  display: block;
+  content: '';
+  width: 160px;
+  height: 27px;
+  background: #14a0c7;
+  position: absolute;
+}*/
+@mixin centered-content-div {
+  width: 1540px;
+  height: 900px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0 auto;
+
+  .header {
+    margin: 0 auto;
+    width: 1903px;
+    height: 900px;
+    background-image: url($image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom-right-radius: 750px 355px;
+    .header-wrap {
+      @include centered-content-div;
+      font-family: map_get($font-families, "font1");
+
+    }
+  }
+  .section {
+  /*  width: 1903px;
+    height: 1000px;*/
+    margin: 0 auto;
+
+
+    .section_text {
+      width: 530px;
+      margin: 60px auto;
+      line-height: 38px;
+      font-size: 40px;
+    }
+    .section_card_wrap {
+      margin: 0 auto;
+
+    }
+
+    .section_card_wrap {
+      @include centered-content-div;
+    }
+
+    .section_banner {
+      width: 1200px;
+      height: 180px;
+      margin: 0 auto;
+    }
+  }
+  .footer {
+    background-color: $footer-bg-color;
+   // font-family: map_get($font-families, "font2");
+    width: 1903px;
+    height: 300px;
+    margin: 0 auto;
+
+    .footer-wrap {
+      @include centered-content-div;
+    }
+
+  }
+
+
+}
+

@@ -1,0 +1,64 @@
+body {
+  width: 1903px;
+  margin: auto; }
+
+.header_heading::after {
+  display: block;
+  content: '';
+  width: 160px;
+  height: 27px;
+  background: #14a0c7;
+  position: absolute; }
+
+.header {
+  background-image: url("../img/m-h-day.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-bottom-right-radius: 730px 400px;
+  width: 1903px;
+  height: 900px;
+  resize: both;
+  margin: auto; }
+  .header .header-wrap {
+    width: 1530px;
+    height: 900px;
+    margin: auto; }
+    .header .header-wrap .landing-logo {
+      padding-top: 20px;
+      align-content: baseline;
+      width: 170px; }
+      .header .header-wrap .landing-logo img {
+        display: inline-block;
+        vertical-align: middle;
+        height: 50px; }
+      .header .header-wrap .landing-logo p {
+        display: inline-block;
+        margin: 0;
+        padding-left: 20px;
+        font-family: "Source Sans Pro", sans-serif;
+        vertical-align: top;
+        font-weight: bold;
+        color: #2c2f3c;
+        font-size: 22px; }
+        .header .header-wrap .landing-logo p span {
+          display: block;
+          font-size: 10px;
+          text-align: center;
+          opacity: 0.6; }
+    .header .header-wrap .header_heading {
+      font-size: 60px;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: bold;
+      color: #2c2f3c;
+      width: 610px; }
+    .header .header-wrap .header_text {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 12px;
+      white-space: pre;
+      margin-left: -23px;
+      width: 820px;
+      color: #2c2f3c; }
+
+/*# sourceMappingURL=style1.css.map */

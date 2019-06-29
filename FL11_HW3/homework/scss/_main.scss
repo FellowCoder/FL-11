@@ -1,21 +1,70 @@
-/*
-.header_heading::after {
-  display: block;
-  content: '';
-  width: 160px;
-  height: 27px;
-  background: #14a0c7;
-  position: absolute;
-}*/
 @mixin centered-content-div {
   width: 1540px;
   height: 900px;
   margin: 0 auto;
 }
+@mixin logo {
+  height: 55px;
+  padding: 30px 0 30px 0;
+  img {
+    height: 55px;
+    width: 55px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    margin: 0 0 0 15px;
+    width: 85px;
+    display: inline-block;
+    vertical-align: top;
+    font-family: map_get($font-families, "font1");
+    font-weight: 600;
+    font-size: 1.75em;
+    text-align: center;
+    opacity: 0.9;
+    color: $font-d-n;
+    span {
+      font-size: 12px;
+      display: block;
+    }
+  }
+}
+%button {
+  height: 60px;
+  width: 183px;
+  outline: none;
+  padding: 0;
+  border-radius: 5px;
+  background-color: $button-color;
+  border: 0;
+  font-family: map_get($font-families, "font2");
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  &:hover {
+    background-color: $button-hover;
+  }
+  &:active {
+    border: 2px solid $button-active;
+  }
+}
+
+%underlined {
+  content: '';
+  position: absolute;
+  width: 220px;
+  z-index: -1;
+  margin-top: -11px;
+  height: 17px;
+  background: $underline;
+}
 
 body {
   margin: 0 auto;
-
+  background-color: $section-bg;
   .header {
     margin: 0 auto;
     width: 1903px;
@@ -27,46 +76,219 @@ body {
     border-bottom-right-radius: 750px 355px;
     .header-wrap {
       @include centered-content-div;
-      font-family: map_get($font-families, "font1");
 
+      .landing-logo {
+        @include logo;
+      }
+
+      .header_heading {
+        position: relative;
+        z-index: 1;
+        width: 610px;
+        line-height: 80px;
+        color: $font-d-n;
+        margin: 65px 0 55px 0;
+        font-family: map_get($font-families, "font2");
+        opacity: 0.9;
+        font-size: 5.6em;
+        font-weight: 900;
+        &:after{
+          content: "";
+          position: absolute;
+          z-index: -1;
+          width: 372px;
+          height: 35px;
+          margin-top: -37px;
+          background-color: $underline;
+
+        }
+      }
+
+      .header_text {
+        width: 815px;
+        line-height: 30px;
+        font-size: 1.2em;
+        white-space: pre-wrap;
+        margin: 0 0 0 -38px;
+
+        color: $font-d-n;
+        font-family: map_get($font-families, "font1");
+      }
+
+      .header_button {
+        @extend %button;
+        margin-top: 50px;
+      }
     }
   }
+
+
+
   .section {
-  /*  width: 1903px;
-    height: 1000px;*/
+    width: 1920px;
+    height: 1000px;
+    background-color: $section-bg;
+    position: relative;
+    z-index: 1;
     margin: 0 auto;
 
 
     .section_text {
-      width: 530px;
-      margin: 60px auto;
-      line-height: 38px;
-      font-size: 40px;
-    }
-    .section_card_wrap {
+      width: 520px;
+      padding: 60px 0;
       margin: 0 auto;
-
+      line-height: 38px;
+      font-size: 3.2em;
+      text-align: center;
+      font-weight: 600;
+      color: $font-d-n;
+      font-family: 'Source Sans Pro', sans-serif;
+      &:after {
+        @extend %underlined;
+        width: 224px;
+        z-index: -1;
+        margin-left: -240px;
+        margin-top: 25px;
+        height: 17px;
+      }
     }
 
     .section_card_wrap {
       @include centered-content-div;
+      height: 570px;
+
+      .section_card {
+        vertical-align: top;
+        height: 520px;
+        width: 445px;
+        display: inline-block;
+        padding: 25px;
+        background-color: $footer-bg-color;
+        border-radius: 5px;
+        &:not(:last-child) {
+          margin-right: 23px;
+        }
+        &:nth-of-type(1) .section_card_underline {
+          @extend %underlined;
+        }
+        &:nth-of-type(2) .section_card_underline {
+          @extend %underlined;
+          width: 185px;
+        }
+        &:nth-of-type(3) .section_card_underline {
+          @extend %underlined;
+          width: 141px;
+        }
+        .section_card_img {
+          height: 295px;
+          width: 445px;
+        }
+
+        .section_card_heading {
+          font-family: 'Source Sans Pro', sans-serif;
+          color: white;
+          margin: 25px auto;
+          line-height: 21px;
+          font-size: 1.8em;
+          font-weight: 600;
+          width: max-content;
+          position: relative;
+          z-index: 1;
+        }
+
+        .section_card_text {
+          font-family: map_get($font-families, "font1");
+          color: #c0c3ce;
+          line-height: 30px;
+          font-size: 20px;
+          text-align: center;
+        }
+
+      }
+
     }
 
     .section_banner {
+      bottom: 0;
       width: 1200px;
       height: 180px;
-      margin: 0 auto;
+      margin: 180px auto;
+      background: linear-gradient(to right, $from 0%,$to 100%);
+      border-radius: 5px;
+
+      .section_banner_text_wrap {
+        width: 775px;
+        float: left;
+
+        .section_banner_heading {
+          width: 510px;
+          line-height: 25px;
+          font-size: 2.4em;
+          font-weight: 600;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 47px auto 30px;
+          color: $font-d-n;
+          opacity: 0.9;
+
+          &:after {
+            @extend %underlined;
+            width: 80px;
+            margin: -7px 0 0 150px;
+
+          }
+        }
+        .section_banner_text {
+          font-family: map_get($font-families, "font1");
+          width: 510px;
+          margin: 0 auto;
+          color: #c0c3ce;
+          font-size: 1.25em;
+        }
+      }
+      .section_banner_button {
+        @extend %button;
+        float: right;
+        margin: 60px 120px;
+      }
     }
   }
   .footer {
     background-color: $footer-bg-color;
-   // font-family: map_get($font-families, "font2");
     width: 1903px;
     height: 300px;
     margin: 0 auto;
 
     .footer-wrap {
       @include centered-content-div;
+      padding-top: 145px;
+      height: 155px;
+      .footer_logo {
+        @include logo;
+      }
+
+      .footer_logo, .footer_text, .footer-cr {
+        display: inline-block;
+        font-family: map_get($font-families, "font1");
+        color: #c0c3ce;
+      }
+      .footer_logo {
+        width: 530px;
+        p {
+          color: #c0c3ce;
+        }
+      }
+      .footer_text {
+        width: 370px;
+        font-size: 1.2em;
+        line-height: 25px;
+      }
+      .footer-cr {
+        @extend .footer_text;
+        margin-top: 45px;
+        width: 240px;
+        float: right;
+
+      }
     }
 
   }
